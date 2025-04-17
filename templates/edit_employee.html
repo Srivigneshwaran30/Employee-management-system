@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .edit-form {
+        max-width: 500px;
+        margin: 40px auto;
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .edit-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .form-control {
+        border-radius: 8px;
+    }
+
+    .btn {
+        border-radius: 8px;
+    }
+</style>
+
+<div class="edit-form">
+    <h2>Edit Employee</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{ employee[1] }}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="role">Role</label>
+            <input list="role-options" id="role" name="role" value="{{ employee[2] }}" class="form-control" required>
+            <datalist id="role-options">
+                <option value="Developer">
+                <option value="Tester">
+                <option value="Designer">
+                <option value="Manager">
+            </datalist>
+        </div>
+
+        <div class="mb-3">
+            <label for="department">Department</label>
+            <input list="dept-options" id="department" name="department" value="{{ employee[3] }}" class="form-control" required>
+            <datalist id="dept-options">
+                <option value="IT">
+                <option value="QA">
+                <option value="HR">
+                <option value="Sales">
+            </datalist>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Update</button>
+    </form>
+</div>
+{% endblock %}

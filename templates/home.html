@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Dashboard Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-6 fw-bold text-primary">Welcome to the Employee Management System</h1>
+        <p class="lead text-muted">Here’s what’s happening in your company today.</p>
+        <hr>
+    </div>
+
+    <!-- Row 1: Graph and Employee Activities -->
+    <div class="row mb-4">
+        <!-- Chart Card -->
+        <div class="col-lg-8 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    Employee Growth Overview
+                </div>
+                <div class="card-body">
+                    <canvas id="employeeChart" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Employee Activities Card -->
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    🔥 Recent Employee Activities
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">👩‍💼 Sarah Lee completed her leadership training</li>
+                        <li class="list-group-item">👨‍💻 Mark Davis received positive feedback from clients</li>
+                        <li class="list-group-item">🧑‍🏫 Jessica Wright conducted a successful team workshop</li>
+                        <li class="list-group-item">👩‍🔬 Emma Brown worked on the new product development task</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Upcoming Holidays and Meeting Schedule -->
+    <div class="row">
+        <!-- Upcoming Holidays -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    📅 Upcoming Holidays
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <!-- Public Holidays -->
+                        <li class="list-group-item list-group-item-info">
+                            <strong>Public Holidays:</strong>
+                            <ul>
+                                <li>🎆 May 25th - Memorial Day</li>
+                                <li>🎉 July 4th - Independence Day</li>
+                                <li>🎄 December 25th - Christmas</li>
+                            </ul>
+                        </li>
+
+                        <!-- Optional Holidays -->
+                        <li class="list-group-item list-group-item-warning">
+                            <strong>Optional Holidays:</strong>
+                            <ul>
+                                <li>🌷 April 15th - Spring Break</li>
+                                <li>🍂 November 10th - Autumn Festival</li>
+                            </ul>
+                        </li>
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meeting Schedule -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    📅 Upcoming Meetings
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">🔔 10 AM - Project Review with Team A</li>
+                        <li class="list-group-item">📞 1 PM - Client call with Delta Corp</li>
+                        <li class="list-group-item">🧠 3 PM - Brainstorming for HR Campaign</li>
+                        <li class="list-group-item">📊 5 PM - Monthly performance wrap-up</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('employeeChart').getContext('2d');
+    const employeeChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            datasets: [{
+                label: 'Total Employees',
+                data: [25, 30, 35, 40, 45],
+                backgroundColor: 'rgba(13, 110, 253, 0.2)',
+                borderColor: 'rgba(13, 110, 253, 1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 5 }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Admin Dashboard Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-6 fw-bold text-primary">Admin Dashboard - Employee Management</h1>
+        <p class="lead text-muted">Manage employee activities, performance, and more.</p>
+        <hr>
+    </div>
+
+    <!-- Employee Presence & Status -->
+    <div class="row mb-4">
+        <!-- Employee Presence Card -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    👨‍💼 Employee Presence
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Employee Name</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Row for Employee Presence -->
+                            <tr>
+                                <td>Alex Johnson</td>
+                                <td>Present</td>
+                                <td><button class="btn btn-danger btn-sm">Mark Absent</button></td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Lee</td>
+                                <td>Absent</td>
+                                <td><button class="btn btn-success btn-sm">Mark Present</button></td>
+                            </tr>
+                            <!-- Add rows dynamically for each employee -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salary Status Card -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    💸 Salary Status
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Employee Name</th>
+                                <th>Salary Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Row for Salary Status -->
+                            <tr>
+                                <td>Alex Johnson</td>
+                                <td>Paid</td>
+                                <td><button class="btn btn-warning btn-sm">Re-issue Salary</button></td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Lee</td>
+                                <td>Pending</td>
+                                <td><button class="btn btn-success btn-sm">Pay Salary</button></td>
+                            </tr>
+                            <!-- Add rows dynamically for each employee -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Employee Task Completion -->
+    <div class="row mb-4">
+        <!-- Task Completion Card -->
+        <div class="col-lg-12 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    📝 Task Completion Status
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Employee Name</th>
+                                <th>Task Assigned</th>
+                                <th>Task Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Row for Task Completion -->
+                            <tr>
+                                <td>Alex Johnson</td>
+                                <td>Project A Report</td>
+                                <td><span class="badge bg-success">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Lee</td>
+                                <td>Client Presentation</td>
+                                <td><span class="badge bg-danger">Not Completed</span></td>
+                            </tr>
+                            <!-- Add rows dynamically for each task -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Performance Summary -->
+    <div class="row mb-4">
+        <!-- Team Performance Card -->
+        <div class="col-lg-12 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    📊 Team Performance
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Example for Team Performance -->
+                        <div class="col-md-3">
+                            <h5>Marketing Team</h5>
+                            <p>Performance: <strong>85%</strong></p>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Development Team</h5>
+                            <p>Performance: <strong>90%</strong></p>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>HR Team</h5>
+                            <p>Performance: <strong>80%</strong></p>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Sales Team</h5>
+                            <p>Performance: <strong>70%</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
