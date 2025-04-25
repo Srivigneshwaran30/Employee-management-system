@@ -36,6 +36,16 @@ def logout():
     session.clear()
     flash('Logged out successfully!', 'info')
     return redirect(url_for('login'))
+# ---------------- admin panel ----------------
+
+@app.route('/adminpanel')  # ✅ proper spelling and outside the logout function
+def admin_panel():
+    if session.get('user_role') != 'admin':
+        flash("Access denied.", "danger")
+        return redirect(url_for('home'))
+    return render_template('adminpanel.html')  # ✅ file name must match
+
+
 
 # ---------------- Home ----------------
 @app.route('/')
